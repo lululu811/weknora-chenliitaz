@@ -1,0 +1,75 @@
+# 忽略所有隐藏文件和目录
+.*
+# 但不忽略特定隐藏文件和目录
+!.env.example
+!.gitignore
+!.github/
+
+# 敏感文件
+*.pem
+*_key
+*_secret
+*.key
+*.crt
+
+# IDE和编辑器文件
+*.swp
+*.swo
+
+# 构建和依赖文件
+node_modules/
+/dist/
+/build/
+*.log
+
+# 临时文件
+tmp/
+temp/
+logs/
+*.pid
+
+WeKnora
+WeKnora-lite
+cmd/desktop/build/bin/
+/models/
+test/data/mswag.txt
+data/files/
+data/weknora.db
+data/weknora.db-wal
+data/weknora.db-shm
+skills-lock.json
+
+# 误建的零字节文件（名字里带引号），2026-10 误提交后清理
+'"model_id"'
+
+# finance profile 的占位挂载目录。
+# 默认路径下没有本地 hithink DuckDB 库时，app/python-service 会挂到这里——
+# 空目录、挂载成功、查不到数据但主流程不受影响。
+# 真实数据请设 HITHINK_DB_DIR 指向自己的库，不要往这里放。
+!.hithink-placeholder/
+!.hithink-placeholder/.gitkeep
+
+web/
+
+**/__pycache__
+/scripts/scale_dev_jobs.sh
+/server
+frontend/.vite
+frontend/chrome-extension/
+WeKnora-Chrome-Extension
+packages/protoc-3.19.4-linux-x86_64.zip
+
+Claude.md
+
+# 本地测试脚本
+configure-ollama.sh
+fix-docker.sh
+
+# WeChat Mini Program local/private configuration
+miniprogram/project.private.config.json
+
+# Staging dir for the Docker sandbox self-check probe (removed after each run)
+.weknora-sandbox-check-*
+
+# Locally built BrowserSkill runtime and extension bundles
+/artifacts/browserskill/
