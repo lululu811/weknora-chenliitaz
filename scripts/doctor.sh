@@ -108,7 +108,22 @@ if [ -f .env ]; then
     ok ".env 存在"
 else
     warn ".env 不存在"
-    hint "生成：cp .env.example .env（默认值即可跑通，模型可在 Web 界面配）"
+    hint "生成：cp .env.example .env，然后填 DASHSCOPE_API_KEY（见下一节）"
+fi
+
+# 模型 Key：唯一一项「不设就没有可用模型」的配置。
+# config/builtin_models.yaml 里 4 个内置模型的 api_key 都读它，其中 3 个是默认模型；
+# 未设置时它们会以**字面量** ${DASHSCOPE_API_KEY} 落库，默认模型不可用，
+# 直到用户提问才报鉴权错误——所以必须在这里提前拦住。
+if [ -f .env ]; then
+    llm_key="$(grep -E "^DASHSCOPE_API_KEY=" .env 2>/dev/null | head -1 | cut -d= -f2- | tr -d '"'"'"' ')"
+    if [ -z "$llm_key" ]; then
+        warn "DASHSCOPE_API_KEY 未设置 —— 内置模型不可用，提问会报鉴权错误"
+        hint "去 https://bailian.console.aliyun.com/ 申请，然后在 .env 里写：DASHSCOPE_API_KEY=sk-..."
+        hint "不想用百炼？也可以在 Web 界面「模型管理」里添加别的模型（启动之后）"
+    else
+        ok "DASHSCOPE_API_KEY 已设置（内置模型可用）"
+    fi
 fi
 
 # 安全相关的关键项：只在 .env 存在时检查
