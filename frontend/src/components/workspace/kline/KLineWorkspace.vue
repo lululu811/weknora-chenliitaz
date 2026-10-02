@@ -2033,7 +2033,7 @@ onUnmounted(() => {
   background: rgba(250, 247, 240, 0.88);
 
   .empty__icon {
-    font-size: 32px;
+    font-size: var(--app-text-display);
     opacity: 0.6;
     line-height: 1;
   }

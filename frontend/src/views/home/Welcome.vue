@@ -184,7 +184,7 @@ onMounted(() => {
 
 .greeting-title {
   font-family: var(--app-font-display);
-  font-size: 32px;
+  font-size: var(--app-text-display);
   font-weight: 600;
   color: var(--td-text-color-primary);
   margin: 0 0 var(--app-space-2) 0;
@@ -232,7 +232,7 @@ onMounted(() => {
 }
 
 .stat-icon {
-  font-size: 32px;
+  font-size: var(--app-text-display);
   line-height: 1;
 }
 
@@ -242,7 +242,7 @@ onMounted(() => {
 
 .stat-value {
   font-family: var(--app-font-display);
-  font-size: 28px;
+  font-size: var(--app-text-5xl);
   font-weight: 600;
   color: var(--td-brand-color);
   line-height: 1.2;
@@ -307,7 +307,7 @@ onMounted(() => {
 }
 
 .action-icon {
-  font-size: 28px;
+  font-size: var(--app-text-5xl);
   line-height: 1;
 }
 
@@ -341,7 +341,7 @@ onMounted(() => {
 
 .quote-mark {
   font-family: var(--app-font-display);
-  font-size: 48px;
+  font-size: var(--app-text-display-lg);
   color: var(--app-accent-ochre, #B8855E);
   line-height: 1;
   margin-bottom: var(--app-space-2);

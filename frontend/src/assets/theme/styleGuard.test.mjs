@@ -44,15 +44,13 @@ const RULES = [
   },
   {
     name: 'font-size-literal',
-    // 基线 2026-10 由 28 上调到 34：本 fork 新增/调整过的若干处用的是**没有对应令牌**的
-    // 展示字号——22px、28px、32px、48px（大标题）与 9px / 12.5px / 13.5px（小标签）。
-    // 令牌表只覆盖 10–24px 的整数档，硬套令牌会改变实际渲染尺寸（例如 48px 会变成 24px），
-    // 那是设计决定，不能靠机械替换做。所以这里如实记下 6 处差额；还债需要单独做一轮视觉校对。
-    // 其余三档（td-token-fallback / radius-literal / motion-literal）已通过「只替换值与令牌完全
-    // 相等」的方式清理干净，未改变任何渲染结果。
-    why: '字号请用 var(--app-text-2xs … 4xl)（10~24px）',
+    // 基线已回到 0（2026-10）。此前超过基线的是展示级与极小标签字号，处理方式是把它们
+    // 变成设计令牌而不是靠调基线：theme.css 里新增 --app-text-4xs(7px) 与展示级
+    // --app-text-5xl(28px) / --app-text-display(32px) / --app-text-display-lg(48px)，
+    // 其余（9 / 10.5 / 12.5 / 13.5 / 17 / 19 / 22 / 26 / 30px）就近靠到相邻令牌，位移 ≤2px。
+    why: '字号请用 var(--app-text-4xs|2xs … 4xl|5xl|display|display-lg)（7~48px）',
     pattern: /font-size\s*:\s*\d+(?:\.\d+)?px/g,
-    baseline: 34,
+    baseline: 0,
   },
   {
     name: 'motion-literal',

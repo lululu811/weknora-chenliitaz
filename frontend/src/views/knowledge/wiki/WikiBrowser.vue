@@ -5565,7 +5565,7 @@ onUnmounted(() => {
 
 .wiki-reader-title {
   margin: 0;
-  font-size: 26px;
+  font-size: var(--app-text-4xl);
   font-weight: 600;
   line-height: 1.3;
   color: var(--td-text-color-primary);
@@ -5612,7 +5612,7 @@ onUnmounted(() => {
   width: 100%;
 
   :deep(.t-input__inner) {
-    font-size: 22px;
+    font-size: var(--app-text-3xl);
     font-weight: 600;
     line-height: 1.35;
     padding: 10px 12px;

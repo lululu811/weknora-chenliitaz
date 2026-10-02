@@ -1072,7 +1072,7 @@ onMounted(async () => {
 
 .showcase-subtitle {
   margin-top: 0;
-  font-size: 22px;
+  font-size: var(--app-text-3xl);
   color: rgba(255, 255, 255, 0.95);
   margin: 0 0 8px 0;
   font-family: var(--app-font-family);
@@ -1191,7 +1191,7 @@ onMounted(async () => {
 
   .logo-text {
     font-family: var(--app-font-display, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif);
-    font-size: 22px;
+    font-size: var(--app-text-3xl);
     font-weight: 600;
     letter-spacing: 0.08em;
     color: var(--td-text-color-primary);
@@ -1413,7 +1413,7 @@ onMounted(async () => {
   border-radius: var(--app-radius-md);
   background: var(--td-success-color-light);
   color: var(--td-brand-color-active);
-  font-size: 12.5px;
+  font-size: var(--app-text-sm);
   line-height: 1.5;
   font-family: var(--app-font-family);
 }
@@ -1656,7 +1656,7 @@ onMounted(async () => {
     left: 40px;
 
     .logo-text {
-      font-size: 19px;
+      font-size: var(--app-text-2xl);
     }
   }
 
@@ -1704,7 +1704,7 @@ onMounted(async () => {
     left: 30px;
 
     .logo-text {
-      font-size: 17px;
+      font-size: var(--app-text-xl);
     }
   }
 
@@ -1746,7 +1746,7 @@ onMounted(async () => {
   }
 
   .form-title {
-    font-size: 22px;
+    font-size: var(--app-text-3xl);
   }
 }
 

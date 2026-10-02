@@ -1420,7 +1420,7 @@ const resizeSidebar = (delta: number, keyboard: boolean) => {
             margin-left: 2px;
             align-self: flex-start;
             margin-top: 2px;
-            font-size: 9px;
+            font-size: var(--app-text-2xs);
             font-weight: 600;
             color: var(--td-text-color-placeholder);
             user-select: none;
