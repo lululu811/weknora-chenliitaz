@@ -5,6 +5,7 @@ import enUS from './locales/en-US.ts'
 import koKR from './locales/ko-KR.ts'
 import jaJP from './locales/ja-JP.ts'
 import { BUILT_IN_DEFAULT, resolveDefaultLocale } from './resolveDefaultLocale.ts'
+import { injectAppName } from './injectAppName.ts'
 import { APP_NAME } from '@/config/appIdentity'
 
 const messages = {
@@ -15,12 +16,9 @@ const messages = {
   'ja-JP': jaJP
 }
 
-// 产品名的 i18n 入口：文案里用 `@:appName` 引用（vue-i18n 的 linked message），
-// 值来自构建期变量 VITE_APP_NAME。这样品牌名只有 src/config/appIdentity.ts 一个来源，
-// 各语言包不必各自抄一遍。
-for (const locale of Object.keys(messages)) {
-  (messages[locale as keyof typeof messages] as Record<string, unknown>).appName = APP_NAME
-}
+// 产品名的 i18n 入口：文案里用 `@:{'appName'}` 引用，值来自构建期变量 VITE_APP_NAME。
+// 这样品牌名只有 src/config/appIdentity.ts 一个来源，各语言包不必各自抄一遍。
+injectAppName(messages, APP_NAME)
 
 // User's explicit past choice wins; otherwise use the deployment default.
 const savedLocale = localStorage.getItem('locale') || resolveDefaultLocale(
