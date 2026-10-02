@@ -96,8 +96,8 @@
     </div>
 
     <!-- Logo - Top Left (温润现代文字 Logo) -->
-    <div class="header-logo" title="小陈知识库">
-      <span class="logo-text">小陈知识库</span>
+    <div class="header-logo" :title="APP_NAME">
+      <span class="logo-text">{{ APP_NAME }}</span>
     </div>
 
     <!-- Header Links - Top Right (only language switch, external links removed for personal KB) -->
@@ -327,6 +327,7 @@ import { MessagePlugin } from 'tdesign-vue-next'
 import { useRoleLabel } from '@/composables/useRoleLabel'
 import { notifyLoginSuccess } from '@/utils/loginNotify'
 import { newPasswordRules } from '@/utils/passwordPolicy'
+import { APP_NAME } from '@/config/appIdentity'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules'
 import 'swiper/css'
@@ -1195,7 +1196,7 @@ onMounted(async () => {
     letter-spacing: 0.08em;
     color: var(--td-text-color-primary);
     /*温润现代的深湖蓝绿点缀 */
-    background: linear-gradient(135deg, var(--td-brand-color, #2D6A64) 0%, var(--td-brand-color-hover, #458F87) 100%);
+    background: linear-gradient(135deg, var(--td-brand-color) 0%, var(--td-brand-color-hover) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1763,7 +1764,7 @@ onMounted(async () => {
     left: 20px;
 
     .logo-text {
-      font-size: 15px;
+      font-size: var(--app-text-lg);
     }
   }
 

@@ -98,9 +98,10 @@ const greetingText = computed(() => {
   return '晚上好'
 })
 
-// 用户名
+// 用户名。登录以邮箱为准，所以正常账号一定落在 email 上；最后兜底空串——
+// 不要写死任何具体称呼，那会让所有未填姓名的用户都显示成同一个人。
 const userName = computed(() => {
-  return (authStore.user as any)?.name || (authStore.user as any)?.username || authStore.user?.email || '小陈'
+  return (authStore.user as any)?.name || (authStore.user as any)?.username || authStore.user?.email || ''
 })
 
 // 当前日期
@@ -381,7 +382,7 @@ onMounted(() => {
   }
 
   .greeting-title {
-    font-size: 24px;
+    font-size: var(--app-text-4xl);
   }
 
   .stats-grid {

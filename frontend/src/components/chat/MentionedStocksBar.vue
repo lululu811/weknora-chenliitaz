@@ -142,9 +142,9 @@ const handleAddToPool = async (stock: MentionedStock) => {
   flex-wrap: wrap;
   gap: 8px 12px;
   padding: 8px 14px;
-  background: var(--td-bg-color-secondarycontainer, rgba(0, 82, 217, 0.04));
-  border: 1px solid var(--td-component-stroke, rgba(0, 82, 217, 0.12));
-  border-radius: 8px;
+  background: var(--td-bg-color-secondarycontainer);
+  border: 1px solid var(--td-component-stroke);
+  border-radius: var(--app-radius-md);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 
   :root[theme-mode="dark"] & {
@@ -157,19 +157,19 @@ const handleAddToPool = async (stock: MentionedStock) => {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
+  font-size: var(--app-text-sm);
   font-weight: 600;
-  color: var(--td-text-color-primary, #1e293b);
+  color: var(--td-text-color-primary);
   white-space: nowrap;
   flex-shrink: 0;
 
   .stocks-bar__icon {
-    font-size: 14px;
+    font-size: var(--app-text-base);
   }
 
   .stocks-bar__count {
-    font-size: 11px;
-    color: var(--td-text-color-placeholder, #64748b);
+    font-size: var(--app-text-xs);
+    color: var(--td-text-color-placeholder);
   }
 }
 
@@ -217,14 +217,14 @@ const handleAddToPool = async (stock: MentionedStock) => {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid var(--td-component-stroke, #cbd5e1);
-  background: var(--td-bg-color-container, #ffffff);
-  color: var(--td-text-color-primary, #0f172a);
-  font-size: 12px;
+  border-radius: var(--app-radius-sm);
+  border: 1px solid var(--td-component-stroke);
+  background: var(--td-bg-color-container);
+  color: var(--td-text-color-primary);
+  font-size: var(--app-text-sm);
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.15s ease;
+  transition: all var(--app-motion-fast) ease;
 
   :root[theme-mode="dark"] & {
     background: #1e293b;
@@ -233,13 +233,13 @@ const handleAddToPool = async (stock: MentionedStock) => {
   }
 
   &:hover {
-    border-color: var(--td-brand-color, #0052d9);
-    background: var(--td-brand-color-light, rgba(0, 82, 217, 0.08));
+    border-color: var(--td-brand-color);
+    background: var(--td-brand-color-light);
     transform: translateY(-1px);
     box-shadow: 0 2px 6px rgba(0, 82, 217, 0.15);
 
     .stock-chip__action {
-      color: var(--td-brand-color, #0052d9);
+      color: var(--td-brand-color);
     }
   }
 
@@ -272,13 +272,13 @@ const handleAddToPool = async (stock: MentionedStock) => {
 
   .stock-chip__code {
     font-family: monospace;
-    font-size: 11px;
-    color: var(--td-text-color-secondary, #64748b);
+    font-size: var(--app-text-xs);
+    color: var(--td-text-color-secondary);
   }
 
   .stock-chip__action {
-    font-size: 11px;
-    color: var(--td-brand-color, #0052d9);
+    font-size: var(--app-text-xs);
+    color: var(--td-brand-color);
     opacity: 0.85;
     margin-left: 2px;
     font-weight: 500;

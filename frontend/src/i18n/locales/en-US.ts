@@ -467,7 +467,7 @@ export default {
     reopen: 'Product tour',
     steps: {
       welcome: {
-        title: 'Welcome to XiaochenKB',
+        title: "Welcome to @:{'appName'}",
         desc: 'A few quick steps to get you familiar with knowledge bases, chat and agents. Click "Next" to begin.'
       },
       knowledge: {
@@ -2753,7 +2753,7 @@ export default {
     registerSuccess: 'Registration successful. Please sign in',
     registerFailed: 'Registration failed',
     subtitle: 'RAG Q&A, ReAct Agent and Wiki — an LLM-powered enterprise knowledge framework',
-    registerSubtitle: 'Create your account and start using XiaochenKB',
+    registerSubtitle: "Create your account and start using @:{'appName'}",
     emailPlaceholder: 'Enter email address',
     passwordPlaceholder: 'Enter password',
     confirmPasswordPlaceholder: 'Enter password again',
@@ -3047,7 +3047,7 @@ export default {
     goToAgentSettings: 'Go to agent settings'
   },
   createChat: {
-    title: 'Hi, this is XiaochenKB — your knowledge, within reach',
+    title: "Hi, this is @:{'appName'} — your knowledge, within reach",
     newSessionTitle: 'New Session',
     openProject: 'Select project',
     clearProject: 'Clear',

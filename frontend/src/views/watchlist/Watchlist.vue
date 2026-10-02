@@ -860,7 +860,7 @@ onUnmounted(() => {
   list-style: none;
   background: var(--td-bg-color-container);
   border: 1px solid var(--td-border-level-1-color);
-  border-radius: 6px;
+  border-radius: var(--app-radius-sm);
   box-shadow: var(--td-shadow-2);
 }
 
@@ -869,7 +869,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 7px 8px;
-  border-radius: 4px;
+  border-radius: var(--app-radius-xs);
   cursor: pointer;
 
   &:hover {
@@ -892,7 +892,7 @@ onUnmounted(() => {
 .watchlist-hint {
   margin: 12px 0 0;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: var(--app-radius-sm);
   background: var(--td-bg-color-secondarycontainer);
   color: var(--td-text-color-secondary);
   font-size: var(--app-text-sm);
@@ -956,7 +956,7 @@ onUnmounted(() => {
 
 .wl-change__pct {
   padding: 1px 6px;
-  border-radius: 4px;
+  border-radius: var(--app-radius-xs);
   font-size: var(--app-text-xs);
 
   .is-up & {

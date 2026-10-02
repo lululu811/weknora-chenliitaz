@@ -2676,7 +2676,7 @@ const processConfigLines = computed<string[]>(() => {
      1Hz cadence. */
   transition: left 800ms cubic-bezier(0.2, 0.8, 0.2, 1),
     width 800ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    filter 150ms ease;
+    filter var(--app-motion-fast) ease;
   z-index: 2;
 }
 
